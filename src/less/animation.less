@@ -10,39 +10,19 @@
   color: #0f2a3a;
   font-size: 20px;
   font-weight: bold;
-  border: 1px solid #0f2a3a;
+  border: 3px solid #ddd;
   border-radius: 20px;
   position: absolute;
   transition: all 0.3s ease-out;
-  .title {
-    color: #fff;
-    position: absolute;
-    opacity: 0;
-    transition: all 0.3s ease-out;
-    &.right {
-      top: 100px;
-      right: 0;
-    }
-    &.left {
-      bottom: -150px;
-      left: 0;
-    }
-  }
   &:hover, &:focus {
     padding: 30px;
-    .title {
-      opacity: 1;
-      &.right {
-        right: -200px;
-      }
-      &.left {
-        left: -150px;
-      }
-    }
   }
 }
 .animation {
+  position: relative;
   padding: 100px;
+  max-width: 600px;
+  margin: auto;
   .center;
   #webapp {
     z-index: 5;
@@ -71,5 +51,45 @@
   }
   #docker {
     z-index: 0;
+  }
+  .label {
+    transition: all 0.3s ease-out;
+    position: absolute;
+    opacity: 0;
+    border-bottom: 1px solid #fff;
+    width: 100px;
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+    &.open {
+      opacity: 1;
+      width: 50%;
+    }
+    &.left {
+      text-align: left;
+    }
+    &.right {
+      text-align: right;
+    }
+  }
+  #react-label {
+    top: 200px;
+    right: 0;
+  }
+  #redux-label {
+    top: 125px;
+    left: 0;
+  }
+  #nodejs-label {
+    top: 300px;
+    right: 0;
+  }
+  #laravel-label {
+    top: 225px;
+    left: 0;
+  }
+  #docker-label {
+    top: 375px;
+    right: 0;
   }
 }

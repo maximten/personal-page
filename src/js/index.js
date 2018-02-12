@@ -49,7 +49,7 @@ const dockerAnimation = anime({
   ...initialAnimationProps,
 });
 
-window.addEventListener('scroll', () => {
+const scrollHandle = () => {
   const offset = document.documentElement.scrollTop || document.body.scrollTop;
   const animationProgress = Math.min(100 / (50 / offset), 100);
   layer1Animation.seek(animationProgress);
@@ -63,5 +63,37 @@ window.addEventListener('scroll', () => {
   laravelAnimation.seek(animationProgress4);
   const animationProgress5 = Math.min(100 / (150 / offset), 100);
   dockerAnimation.seek(animationProgress5);
-});
+  if (offset >= 50) {
+    document.getElementById('react-label').classList.add('open');
+    document.getElementById('redux-label').classList.add('open');
+  } else {
+    document.getElementById('react-label').classList.remove('open');
+    document.getElementById('redux-label').classList.remove('open');
+  }
+  if (offset >= 100) {
+    document.getElementById('nodejs-label').classList.add('open');
+    document.getElementById('laravel-label').classList.add('open');
+  } else {
+    document.getElementById('nodejs-label').classList.remove('open');
+    document.getElementById('laravel-label').classList.remove('open');
+  }
+  if (offset >= 150) {
+    document.getElementById('docker-label').classList.add('open');
+  } else {
+    document.getElementById('docker-label').classList.remove('open');
+  }
+};
+scrollHandle();
+window.addEventListener('scroll', scrollHandle);
 
+// Array.prototype.slice.call(document.querySelectorAll('[data-label-for]'))
+// .forEach((item) => {
+//   const key = item.getAttribute('data-label-for');
+//   const target = document.getElementById(key);
+//   target.addEventListener('mouseenter', () => {
+//     item.style.opacity = 1;
+//   });
+//   target.addEventListener('mouseleave', () => {
+//     item.style.opacity = 0;
+//   });
+// })
