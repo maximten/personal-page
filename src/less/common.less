@@ -12,40 +12,10 @@ html, body {
   max-width: 100%;
   height: auto;
 }
-.header {
-  background-color: #19445e;
-  height: 60px;
-  line-height: 60px;
-  color: #fff;
-  padding: 0 50px 0 50px;
-  .container {
-    display: flex;
-    justify-content: space-between;
-    a {
-      color: #fff;
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: all 0.3s ease-out;
-      margin-right: 10px;
-      &:last-child {
-        margin-right: none;
-      }
-      &:hover, &:focus {
-        border-bottom: 1px solid #fff;
-      }
-    }
-  }
-}
 .center {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-header {
-  .header;
-}
-footer {
-  .header;
 }
 .content {
   min-height: calc(~'200vh');
@@ -54,13 +24,20 @@ footer {
   h1, h2 {
     margin: 0;
   }
-  .jumbotron {
-    min-height: 100px;
-    padding: 100px;
-    color: #fff;
-    .title {
-      text-align: center;
-      margin-bottom: 10vh;
-    }
+}
+.jumbotron {
+  min-height: 100vh;
+  padding: 150px 100px 100px 100px;
+  color: #fff;
+  .title {
+    text-align: center;
+    margin-bottom: 10vh;
+  }
+}
+.skills {
+  text-align: center;
+  color: #fff;
+  h2 {
+    font-size: 80px;
   }
 }

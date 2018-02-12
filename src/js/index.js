@@ -49,6 +49,18 @@ const dockerAnimation = anime({
   ...initialAnimationProps,
 });
 
+let headerFolded = false;
+document.getElementById('main-link').onclick = (e) => {
+  e.preventDefault();
+  const header = document.getElementById('header');
+  if (headerFolded) {
+    header.classList.remove('folded');
+  } else {
+    header.classList.add('folded');
+  }
+  headerFolded = !headerFolded;
+};
+
 const scrollHandle = () => {
   const offset = document.documentElement.scrollTop || document.body.scrollTop;
   const animationProgress = Math.min(100 / (50 / offset), 100);
@@ -82,18 +94,13 @@ const scrollHandle = () => {
   } else {
     document.getElementById('docker-label').classList.remove('open');
   }
+  if (offset > 0) {
+    document.getElementById('header').classList.add('folded');
+    headerFolded = true;
+  } else {
+    document.getElementById('header').classList.remove('folded');
+    headerFolded = false;
+  }
 };
 scrollHandle();
 window.addEventListener('scroll', scrollHandle);
-
-// Array.prototype.slice.call(document.querySelectorAll('[data-label-for]'))
-// .forEach((item) => {
-//   const key = item.getAttribute('data-label-for');
-//   const target = document.getElementById(key);
-//   target.addEventListener('mouseenter', () => {
-//     item.style.opacity = 1;
-//   });
-//   target.addEventListener('mouseleave', () => {
-//     item.style.opacity = 0;
-//   });
-// })

@@ -1,0 +1,51 @@
+header {
+  top: 0;
+  background-color: #19445e;
+  height: 60px;
+  line-height: 60px;
+  color: #fff;
+  padding: 0 50px 0 50px;
+  position: fixed;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 10;
+  transition: all 0.3s linear;
+  a {
+    text-align: center;
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s linear;
+    margin-right: 10px;
+    &:last-child {
+      margin-right: none;
+    }
+    &:hover, &:focus {
+      border-bottom: 1px solid #fff;
+    }
+    &.main-link {
+      position: relative;
+      bottom: 0;
+      span {
+        transition: all 0.3s linear;
+        display: inline-block
+      }
+    }
+  }
+  &.folded {
+    top: -100px;
+    a {
+      &.main-link {
+        bottom: -100px;
+        height: 30px;
+        width: 30px;
+        span {
+          opacity: 0;
+          width: 0;
+          font-size: 0;
+        }
+      }
+    }
+  }
+}
