@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=480">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Maxim Ten</title>
     <link rel="stylesheet" href="/dist/style.css">
@@ -32,17 +32,21 @@
                     <div class="frame" id="webapp" style="transform: rotateX(60deg) rotateY(0deg) rotateZ(45deg);">
                         WebApp
                     </div>
-                    <div class="frame" id="react" style="transform: rotateX(60deg) rotateY(0deg) rotateZ(45deg);">
-                        <img class="img-responsive" src="/src/img/react.svg" alt="react">
+                    <div id="layer1" style="transform: rotateX(60deg) rotateY(0deg) rotateZ(45deg);">
+                        <div class="frame" id="react">
+                            <img class="img-responsive" src="/src/img/react.svg" alt="react">
+                        </div>
+                        <div class="frame" id="redux">
+                            <img class="img-responsive" src="/src/img/redux.png" alt="redux">
+                        </div>
                     </div>
-                    <div class="frame" id="redux" style="transform: rotateX(60deg) rotateY(0deg) rotateZ(45deg);">
-                        <img class="img-responsive" src="/src/img/redux.png" alt="redux">
-                    </div>
-                    <div class="frame" id="nodejs" style="transform: rotateX(60deg) rotateY(0deg) rotateZ(45deg);">
-                        <img class="img-responsive" src="/src/img/nodejs.svg" alt="nodejs">
-                    </div>
-                    <div class="frame" id="laravel" style="transform: rotateX(60deg) rotateY(0deg) rotateZ(45deg);">
-                        <img class="img-responsive" src="/src/img/laravel.svg" alt="laravel">
+                    <div id="layer2" style="transform: rotateX(60deg) rotateY(0deg) rotateZ(45deg);">
+                        <div class="frame" id="nodejs">
+                            <img class="img-responsive" src="/src/img/nodejs.svg" alt="nodejs">
+                        </div>
+                        <div class="frame" id="laravel">
+                            <img class="img-responsive" src="/src/img/laravel.svg" alt="laravel">
+                        </div>
                     </div>
                     <div class="frame" id="docker" style="transform: rotateX(60deg) rotateY(0deg) rotateZ(45deg);">
                         <img class="img-responsive" src="/src/img/docker.svg" alt="docker">
