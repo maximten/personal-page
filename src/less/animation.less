@@ -14,8 +14,31 @@
   border-radius: 20px;
   position: absolute;
   transition: all 0.3s ease-out;
+  .title {
+    color: #fff;
+    position: absolute;
+    opacity: 0;
+    transition: all 0.3s ease-out;
+    &.right {
+      top: 100px;
+      right: 0;
+    }
+    &.left {
+      bottom: -150px;
+      left: 0;
+    }
+  }
   &:hover, &:focus {
     padding: 30px;
+    .title {
+      opacity: 1;
+      &.right {
+        right: -200px;
+      }
+      &.left {
+        left: -150px;
+      }
+    }
   }
 }
 .animation {
