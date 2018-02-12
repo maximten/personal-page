@@ -4,6 +4,8 @@
   justify-content: center;
   width: 200px;
   height: 200px;
+  padding: 30px;
+  box-sizing: border-box;
   text-align: center;
   background: #fff;
   color: #0f2a3a;
@@ -18,16 +20,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  #top-frame {
-    .frame;
+  #webapp {
+    z-index: 5;
+  }
+  #react {
+    z-index: 4;
+  }
+  #redux {
+    z-index: 3;
+  }
+  #nodejs {
     z-index: 2;
   }
-  #middle-frame {
-    .frame;
+  #laravel {
     z-index: 1;
   }
-  #bottom-frame {
-    .frame;
+  #docker {
     z-index: 0;
   }
 }
