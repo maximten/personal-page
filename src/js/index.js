@@ -52,6 +52,25 @@ const dockerAnimation = anime({
   ...initialAnimationProps,
 });
 
+const setSkillsScene = () => {
+  const lines = [...document.querySelectorAll('.line')];
+  lines.forEach((item, key, array) => {
+    const length = array.length;
+    const d = Math.abs(key - length / 2);
+    item.style.borderBottomWidth = (d + 1) + 'px';
+  });
+  const linesSpans = [...document.querySelectorAll('.line span')];
+  linesSpans.forEach((item, key) => {
+    if (Math.random() > 0.5) {
+      item.style.left = (Math.random() * (100) + 10) + 'px';
+    } else {
+      item.style.right = (Math.random() * (100) + 10) + 'px';
+    }
+    item.style.fontSize = (Math.random() * (30) + 18) + 'px';
+  });
+}
+setSkillsScene();
+
 document.getElementById('main-link').onclick = (e) => {
   e.preventDefault();
   const header = document.getElementById('header');
@@ -110,23 +129,8 @@ const scrollHandle = () => {
   } else if (skillsOffset > 30 && skillsAnimated) {
     skillsAnimated = false;
     document.getElementById("skills-scene").classList.remove('unfolded');
+    setSkillsScene();
   }
 };
 scrollHandle();
 window.addEventListener('scroll', scrollHandle);
-
-const lines = [...document.querySelectorAll('.line')];
-lines.forEach((item, key, array) => {
-  const length = array.length;
-  const d = Math.abs(key - length / 2);
-  item.style.borderBottomWidth = (d + 1) + 'px';
-});
-const linesSpans = [...document.querySelectorAll('.line span')];
-linesSpans.forEach((item, key) => {
-  if (Math.random() > 0.5) {
-    item.style.left = (Math.random() * (100) + 10) + 'px';
-  } else {
-    item.style.right = (Math.random() * (100) + 10) + 'px';
-  }
-  item.style.fontSize = (Math.random() * (30) + 18) + 'px';
-});
