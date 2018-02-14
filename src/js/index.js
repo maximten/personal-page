@@ -103,16 +103,27 @@ const scrollHandle = () => {
     document.getElementById('header').classList.remove('folded');
     headerFolded = false;
   }
-  if (Math.abs(document.getElementById("skills").offsetTop - offset) < 200 && !skillsAnimated) {
+  const skillsOffset = document.getElementById("skills").offsetTop - offset;
+  if (skillsOffset <= 30 && !skillsAnimated) {
     skillsAnimated = true;
     document.getElementById("skills-scene").classList.add('unfolded');
+  } else if (skillsOffset > 30 && skillsAnimated) {
+    skillsAnimated = false;
+    document.getElementById("skills-scene").classList.remove('unfolded');
   }
 };
 scrollHandle();
 window.addEventListener('scroll', scrollHandle);
 
-const lines = [...document.querySelectorAll('.line span')];
-lines.forEach((item, key) => {
+const lines = [...document.querySelectorAll('.line')];
+lines.forEach((item, key, array) => {
+  const length = array.length;
+  const d = Math.abs(key - length / 2);
+  console.log(d)
+  item.style.borderBottomWidth = (d + 1) + 'px';
+});
+const linesSpans = [...document.querySelectorAll('.line span')];
+linesSpans.forEach((item, key) => {
   if (Math.random() > 0.5) {
     item.style.left = (Math.random() * (100) + 10) + 'px';
   } else {
