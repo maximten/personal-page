@@ -18,7 +18,7 @@ html, body {
   justify-content: center;
 }
 .content {
-  min-height: calc(~'300vh');
+  min-height: calc(~'400vh');
   transition: all 0.5s ease-out;
   overflow: hidden;
   background: linear-gradient(45deg, #238176, #6a82fb);
@@ -39,8 +39,43 @@ html, body {
   position: relative;
   text-align: center;
   color: #fff;
+  margin-bottom: 150px;
   h2 {
     font-size: 80px;
     margin-bottom: 50px;
+  }
+}
+.portfolio {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  h2 {
+    font-size: 80px;
+    margin-bottom: 50px;
+  }
+  .panel-white {
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    width: 300px;
+    padding: 30px;
+    background: #fff;
+    border: 3px solid #ddd;
+    transition: all 0.3s ease-out;
+    &:hover, &:active, &:focus {
+      padding: 50px;
+    }
+    h3 {
+      display: inline-block;
+      color: #000;
+      text-decoration: none;
+      font-size: 20px;
+      margin-top: 0;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+    }
+    img {
+      margin: auto;
+    }
   }
 }
