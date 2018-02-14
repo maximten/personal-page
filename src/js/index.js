@@ -1,5 +1,8 @@
 import anime from 'animejs'
 
+let headerFolded = false;
+let skillsAnimated = false;
+
 const initialAnimationProps = {
   rotateX: '60deg',
   rotateY: '0',
@@ -49,7 +52,6 @@ const dockerAnimation = anime({
   ...initialAnimationProps,
 });
 
-let headerFolded = false;
 document.getElementById('main-link').onclick = (e) => {
   e.preventDefault();
   const header = document.getElementById('header');
@@ -101,6 +103,20 @@ const scrollHandle = () => {
     document.getElementById('header').classList.remove('folded');
     headerFolded = false;
   }
+  if (Math.abs(document.getElementById("skills").offsetTop - offset) < 200 && !skillsAnimated) {
+    skillsAnimated = true;
+    document.getElementById("skills-scene").classList.add('unfolded');
+  }
 };
 scrollHandle();
 window.addEventListener('scroll', scrollHandle);
+
+const lines = [...document.querySelectorAll('.line span')];
+lines.forEach((item, key) => {
+  if (Math.random() > 0.5) {
+    item.style.left = (Math.random() * (100) + 10) + 'px';
+  } else {
+    item.style.right = (Math.random() * (100) + 10) + 'px';
+  }
+  item.style.fontSize = (Math.random() * (30) + 18) + 'px';
+});

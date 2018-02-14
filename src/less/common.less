@@ -18,8 +18,9 @@ html, body {
   justify-content: center;
 }
 .content {
-  min-height: calc(~'200vh');
+  min-height: calc(~'300vh');
   transition: all 0.5s ease-out;
+  overflow: hidden;
   background: linear-gradient(45deg, #238176, #6a82fb);
   h1, h2 {
     margin: 0;
@@ -35,9 +36,11 @@ html, body {
   }
 }
 .skills {
+  position: relative;
   text-align: center;
   color: #fff;
   h2 {
     font-size: 80px;
+    margin-bottom: 50px;
   }
 }
