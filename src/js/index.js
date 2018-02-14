@@ -119,7 +119,6 @@ const lines = [...document.querySelectorAll('.line')];
 lines.forEach((item, key, array) => {
   const length = array.length;
   const d = Math.abs(key - length / 2);
-  console.log(d)
   item.style.borderBottomWidth = (d + 1) + 'px';
 });
 const linesSpans = [...document.querySelectorAll('.line span')];
